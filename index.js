@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require(path.join(__dirname, 'utils', 'generateMarkdown'));
 
 // array of license options to choose from
 const licenseOptions = [
@@ -64,11 +64,21 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log('README.md created!');
+        }
+      });
 }
 
 // function to initialize program
 function init() {
-
+    inquirer.prompt(questions).then(answers => {
+        const markdown = generateMarkdown(answers);
+        writeToFile("README.md", markdown);
+    });
 }
 
 // function call to initialize program
