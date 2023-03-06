@@ -28,4 +28,4 @@
   Sample testing
   
   ## Questions
-  If you have any questions, please feel free to contact me via email at sampleemail@github.com, or visit my [GitHub profile](https://github.com/Sample Github username).
+  If you have any questions, please feel free to contact me via email at joniqs91@gmail.com, or visit my [GitHub profile](https://github.com/Joniqs)
